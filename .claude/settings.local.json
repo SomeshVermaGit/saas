@@ -1,0 +1,17 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir:*)",
+      "Bash(npx create-next-app@latest:*)",
+      "Bash(npx shadcn@latest init:*)",
+      "Bash(git init:*)",
+      "Bash(tree:*)",
+      "Bash(for dir in api api/routes core models schemas services ai db)",
+      "Bash(do touch $dir/__init__.py)",
+      "Bash(done)",
+      "Bash(git add:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}
