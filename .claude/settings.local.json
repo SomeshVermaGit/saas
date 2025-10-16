@@ -9,7 +9,8 @@
       "Bash(for dir in api api/routes core models schemas services ai db)",
       "Bash(do touch $dir/__init__.py)",
       "Bash(done)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(git commit:*)"
     ],
     "deny": [],
     "ask": []
