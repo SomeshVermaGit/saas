@@ -16,7 +16,7 @@ psycopg2-binary==2.9.9
 
 # Vector Database Options
 qdrant-client==1.11.3
-pymongo==4.10.1  # For MongoDB Atlas Vector Search
+pymongo==4.9.0  # For MongoDB Atlas Vector Search (compatible with motor 3.6.0)
 motor==3.6.0  # Async MongoDB driver
 
 # AI & LangChain
