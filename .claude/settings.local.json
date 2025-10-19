@@ -16,7 +16,8 @@
       "Bash(npm install:*)",
       "Bash(git push:*)",
       "Bash(cat:*)",
-      "Bash(npm run build)"
+      "Bash(npm run build)",
+      "Bash(git merge:*)"
     ],
     "deny": [],
     "ask": []
