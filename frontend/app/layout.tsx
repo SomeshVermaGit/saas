@@ -14,8 +14,13 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AI Knowledge Assistant | Intelligent Document Workflows",
+  title: "Nexus Flow | AI Knowledge Assistant",
   description: "Transform your documents into intelligent workflows with AI-powered assistance. Built with Next.js and FastAPI.",
+  icons: {
+    icon: '/favicon.png',
+    shortcut: '/favicon.png',
+    apple: '/favicon.png',
+  },
 };
 
 export default function RootLayout({

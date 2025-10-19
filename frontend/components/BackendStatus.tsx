@@ -24,7 +24,14 @@ export default function BackendStatus() {
       setVersion(result.data.version);
     } else {
       setStatus('error');
-      setMessage(result.error || 'Failed to connect to backend');
+      const errorMsg = result.error || 'Failed to connect to backend';
+
+      // Check if it's a localhost connection issue
+      if (API_URL.includes('localhost')) {
+        setMessage('⚠️ Backend not configured. Add NEXT_PUBLIC_API_URL to Vercel environment variables.');
+      } else {
+        setMessage(errorMsg);
+      }
     }
   };
 
@@ -50,12 +57,25 @@ export default function BackendStatus() {
       </div>
 
       {status === 'error' && (
-        <button
-          onClick={checkBackend}
-          className="mt-3 w-full px-3 py-1.5 text-sm bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
-        >
-          Retry Connection
-        </button>
+        <>
+          {API_URL.includes('localhost') && (
+            <div className="mt-3 p-3 bg-yellow-50 dark:bg-yellow-900/20 border border-yellow-200 dark:border-yellow-800 rounded text-xs">
+              <p className="font-semibold mb-2">🔧 Setup Required:</p>
+              <ol className="list-decimal list-inside space-y-1 text-gray-700 dark:text-gray-300">
+                <li>Deploy backend to Railway</li>
+                <li>Generate public domain in Railway</li>
+                <li>Add NEXT_PUBLIC_API_URL to Vercel</li>
+                <li>Redeploy this app</li>
+              </ol>
+            </div>
+          )}
+          <button
+            onClick={checkBackend}
+            className="mt-3 w-full px-3 py-1.5 text-sm bg-blue-500 text-white rounded hover:bg-blue-600 transition-colors"
+          >
+            Retry Connection
+          </button>
+        </>
       )}
     </div>
   );
