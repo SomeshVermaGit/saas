@@ -76,3 +76,5 @@ htmlcov/
 
 # Documentation
 site/
+
+.vercel

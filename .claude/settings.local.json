@@ -11,7 +11,9 @@
       "Bash(done)",
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "Bash(git rm:*)"
+      "Bash(git rm:*)",
+      "Bash(vercel:*)",
+      "Bash(npm install:*)"
     ],
     "deny": [],
     "ask": []
