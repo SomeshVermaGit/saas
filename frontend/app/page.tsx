@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 import BackendStatus from '@/components/BackendStatus';
 import { API_URL } from '@/lib/api';
 
@@ -14,12 +15,17 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-xl">AI</span>
-              </div>
+              <Image
+                src="/logo.png"
+                alt="Nexus Flow Logo"
+                width={50}
+                height={50}
+                className="rounded-lg"
+                priority
+              />
               <div>
-                <h1 className="text-xl font-bold">AI Knowledge Assistant</h1>
-                <p className="text-xs text-gray-600 dark:text-gray-400">Powered by FastAPI + Next.js</p>
+                <h1 className="text-xl font-bold">Nexus Flow</h1>
+                <p className="text-xs text-gray-600 dark:text-gray-400">AI Knowledge Workflows</p>
               </div>
             </div>
 
@@ -143,7 +149,7 @@ export default function Home() {
       <footer className="border-t bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm mt-16">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
           <div className="text-center text-sm text-gray-600 dark:text-gray-400">
-            <p>© 2025 AI Knowledge Assistant. Deployed on Vercel + Railway.</p>
+            <p>© 2025 Nexus Flow. Deployed on Vercel + Railway.</p>
             <p className="mt-2">
               <a href="https://github.com" className="hover:underline">GitHub</a>
               {' · '}
